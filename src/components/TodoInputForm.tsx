@@ -15,8 +15,8 @@ const TodoInputForm = ({ addTodo }: { addTodo: (todo: string) => void }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={input} onChange={handleInputChange} />
+    <form  onSubmit={handleSubmit}>
+      <input className=" bg-slate-200 px-2 py-1" type="text" value={input} onChange={handleInputChange} />
       <button type="submit">Add</button>
     </form>
   );

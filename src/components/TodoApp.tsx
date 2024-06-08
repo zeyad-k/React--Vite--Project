@@ -1,4 +1,4 @@
-import {   useState } from "react";
+import { useState } from "react";
 import TodoList from "./TodoList";
 import TodoInputForm from "./TodoInputForm";
 
@@ -18,10 +18,16 @@ const TodoApp = () => {
     localStorage.setItem("todos", JSON.stringify(newTodos));
   };
 
+  const deleteTodo = (index: number) => {
+    const newTodos = todos.filter((_, todoIndex) => todoIndex !== index);
+    setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+  };
+
   return (
     <div>
       <TodoInputForm addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
 };
