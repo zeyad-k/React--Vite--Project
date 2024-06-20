@@ -7,7 +7,7 @@ function App() {
         Hello world!
       </h1>
       <div className="flex justify-center">
-        <div className="w-1/5">
+        <div className="w-1/8">
           <TodoApp />
         </div>
       </div>
