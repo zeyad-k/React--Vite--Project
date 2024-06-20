@@ -3,7 +3,7 @@ import TodoApp from "./components/TodoApp";
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold  text-center underline">
+      <h1 className="text-3xl font-bold  mb-6 text-center underline">
         Hello world!
       </h1>
       <div className="flex justify-center">
