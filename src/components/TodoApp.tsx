@@ -12,6 +12,8 @@ const TodoApp = () => {
     }
   });
 
+  const [editIndex, setEditIndex] = useState<number | null>(null);
+
   const addTodo = (todo: string) => {
     const newTodos = [...todos, todo];
     setTodos(newTodos);
@@ -24,10 +26,17 @@ const TodoApp = () => {
     localStorage.setItem("todos", JSON.stringify(newTodos));
   };
 
+  const editTodo = (index: number, newTodo: string) => {
+    const newTodos = todos.map((todo, todoIndex) => todoIndex === index ? newTodo : todo);
+    setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+    setEditIndex(null);
+  };
+
   return (
     <div className=" flex gap-3 flex-col">
-      <TodoInputForm addTodo={addTodo} />
-      <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <TodoInputForm addTodo={addTodo} editTodo={editTodo} editIndex={editIndex} todos={todos} />
+      <TodoList todos={todos} deleteTodo={deleteTodo} setEditIndex={setEditIndex} />
     </div>
   );
 };
