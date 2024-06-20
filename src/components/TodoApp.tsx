@@ -25,7 +25,7 @@ const TodoApp = () => {
   };
 
   return (
-    <div>
+    <div className=" flex gap-3 flex-col">
       <TodoInputForm addTodo={addTodo} />
       <TodoList todos={todos} deleteTodo={deleteTodo} />
     </div>

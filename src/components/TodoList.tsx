@@ -5,13 +5,15 @@ const TodoList = ({
   todos: string[];
   deleteTodo: (index: number) => void;
 }) => (
-  <div>
+  <div className="w-full text-center">
     <h1>Todo List</h1>
-    <ul className="text-red-600 text-center">
+    <ul className="  ">
       {todos.map((todo, index) => (
         <li className="flex justify-between " key={index}>
           {todo}
-          <button onClick={() => deleteTodo(index)}>Delete</button>
+          <button className="text-red-600" onClick={() => deleteTodo(index)}>
+            Delete
+          </button>
         </li>
       ))}
     </ul>
