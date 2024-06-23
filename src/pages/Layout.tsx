@@ -9,10 +9,10 @@ const Layout = () => {
       <Link to="/" className="hover:text-gray-400">Home</Link>
     </li>
     <li>
-      <Link to="/blogs" className="hover:text-gray-400">Blogs</Link>
+      <Link to="/Redux" className="hover:text-gray-400">Redux</Link>
     </li>
     <li>
-      <Link to="/contact" className="hover:text-gray-400">Contact</Link>
+      <Link to="/Atom" className="hover:text-gray-400">Atom</Link>
     </li>
   </ul>
 </nav>
