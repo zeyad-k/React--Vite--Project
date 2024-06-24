@@ -18,7 +18,7 @@
 // export default App;
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
- import Layout from "./pages/Layout";
+import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import ReduxAppPage from "./pages/ReduxAppPage";
@@ -30,7 +30,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           {/* {/* <Route path="blogs" element={<Blogs />} /> */}
-          <Route path="redux" element={<ReduxAppPage />} /> */}
+          <Route path="redux" element={<ReduxAppPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
