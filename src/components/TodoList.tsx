@@ -1,17 +1,24 @@
-const TodoList = ({
+ 
+
+interface Todo {
+  text: string;
+  completed: boolean;
+}
+
+interface TodoListProps {
+  todos: Todo[];
+  deleteTodo: (index: number) => void;
+  toggleTodo: (index: number) => void;
+}
+
+const TodoList: React.FC<TodoListProps> = ({
   todos,
   deleteTodo,
-  setEditIndex,
   toggleTodo,
-}: {
-  todos: { text: string; completed: boolean }[];
-  deleteTodo: (index: number) => void;
-  setEditIndex: (index: number) => void;
-  toggleTodo: (index: number) => void;
 }) => (
   <div className="w-full text-center">
     <h1>Todo List</h1>
-    <ul className="  ">
+    <ul>
       {todos.map((todo, index) => (
         <li
           className={`flex justify-between ${
@@ -19,7 +26,6 @@ const TodoList = ({
           }`}
           key={index}
         >
-          {/*  */}
           <span className="flex gap-2">
             <input
               type="checkbox"
@@ -31,12 +37,6 @@ const TodoList = ({
           <div className="flex gap-2">
             <button className="text-red-600" onClick={() => deleteTodo(index)}>
               Delete
-            </button>
-            <button
-              className="text-blue-600"
-              onClick={() => setEditIndex(index)}
-            >
-              Edit
             </button>
           </div>
         </li>

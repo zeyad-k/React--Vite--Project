@@ -2,8 +2,13 @@ import { useState } from "react";
 import TodoList from "./TodoList";
 import TodoInputForm from "./TodoInputForm";
 
+interface Todo {
+  text: string;
+  completed: boolean;
+}
+
 const TodoApp = () => {
-  const [todos, setTodos] = useState<{ text: string; completed: boolean }[]>(
+  const [todos, setTodos] = useState<Todo[]>(
     () => {
       const savedTodos = localStorage.getItem("todos");
       if (savedTodos) {
@@ -13,8 +18,6 @@ const TodoApp = () => {
       }
     }
   );
-
-  const [editIndex, setEditIndex] = useState<number | null>(null);
 
   const addTodo = (todo: string) => {
     const newTodos = [...todos, { text: todo, completed: false }];
@@ -28,15 +31,6 @@ const TodoApp = () => {
     localStorage.setItem("todos", JSON.stringify(newTodos));
   };
 
-  const editTodo = (index: number, newTodo: string) => {
-    const newTodos = todos.map((todo, todoIndex) =>
-      todoIndex === index ? { ...todo, text: newTodo } : todo
-    );
-    setTodos(newTodos);
-    localStorage.setItem("todos", JSON.stringify(newTodos));
-    setEditIndex(null);
-  };
-
   const toggleTodo = (index: number) => {
     const newTodos = todos.map((todo, todoIndex) =>
       todoIndex === index ? { ...todo, completed: !todo.completed } : todo
@@ -46,17 +40,14 @@ const TodoApp = () => {
   };
 
   return (
-    <div className=" flex gap-3 flex-col">
+    <div className="flex gap-3 flex-col">
       <TodoInputForm
         addTodo={addTodo}
-        editTodo={editTodo}
-        editIndex={editIndex}
         todos={todos}
       />
       <TodoList
         todos={todos}
         deleteTodo={deleteTodo}
-        setEditIndex={setEditIndex}
         toggleTodo={toggleTodo}
       />
     </div>
