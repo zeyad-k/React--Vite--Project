@@ -22,6 +22,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
 import ReduxAppPage from "./pages/ReduxAppPage";
+import AtomAppPage from "./pages/AtomAppPage";
 
 export default function App() {
   return (
@@ -29,7 +30,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* {/* <Route path="blogs" element={<Blogs />} /> */}
+          <Route path="atom" element={<AtomAppPage />} />
           <Route path="redux" element={<ReduxAppPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>

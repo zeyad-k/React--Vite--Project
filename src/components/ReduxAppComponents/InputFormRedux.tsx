@@ -1,18 +1,11 @@
 import { useDispatch } from "react-redux";
 import { useState, ChangeEvent, FormEvent } from "react";
 import { addTodo } from "../../ReduxToolkit/todoSlice";
-// import { RootState } from "../../ReduxToolkit/store";
-
-// type Todo = {
-//   id: number;
-//   text: string;
-//   completed: boolean;
-// };
+ 
 
 const InputFormRedux = () => {
   const [text, setText] = useState<string>("");
-  //   const todos = useSelector((state: RootState) => state.todos);
-  const dispatch = useDispatch();
+   const dispatch = useDispatch();
 
   const handleAddTodo = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
