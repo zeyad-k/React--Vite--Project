@@ -1,16 +1,15 @@
-import { Provider } from "react-redux";
-import store from "../ReduxToolkit/store";
-import TodoAppWithRedux from "../components/ReduxAppComponents/TodoAppWithRedux";
+ import { RecoilRoot } from "recoil";
+import TodoAppWithAtom from "../components/AtomAppComponents/TodoAppWithAtom";
 
 const AtomAppPage = () => {
   return (
     <div className="flex flex-col     mt-3 ">
-      <h1 className="text-blue-500 text-center text-3xl my-5">
-        Redux App Page
+      <h1 className="text-red-500 text-center text-3xl my-5">
+        Atom App Page
       </h1>
-      <Provider store={store}>
-        <TodoAppWithRedux />
-      </Provider>
+      <RecoilRoot>
+        <TodoAppWithAtom />
+      </RecoilRoot>
     </div>
   );
 };
