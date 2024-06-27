@@ -55,7 +55,7 @@ const TodosListAtom = () => {
               >
                 {todo.text}
               </span>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center  gap-2">
                 <ActionButton
                   onClick={() => handleToggleComplete(todo.id)}
                   label={todo.completed ? t("undo") : t("complete")}
