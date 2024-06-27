@@ -6,6 +6,7 @@ import {
 } from "../../ReduxToolkit/todoSlice";
 import { RootState } from "../../ReduxToolkit/store";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 type Todo = {
   id: number;
@@ -14,6 +15,7 @@ type Todo = {
 };
 
 const TodosListRedux = () => {
+  const { t } = useTranslation();
   const todos = useSelector((state: RootState) => state.todos);
   const dispatch = useDispatch();
 
@@ -49,13 +51,13 @@ const TodosListRedux = () => {
                   onClick={() => handleToggleComplete(todo.id)}
                   className="px-2 py-1 text-xs text-white bg-green-500 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                 >
-                  {todo.completed ? "Undo" : "Complete"}
+                  {todo.completed ? t("Undo") : t("Complete")}
                 </button>
                 <button
                   onClick={() => handleDeleteTodo(todo.id)}
                   className="px-2 py-1 text-xs text-white bg-red-500 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
                 >
-                  Delete
+                  {t("delete")}
                 </button>
               </div>
             </li>

@@ -1,0 +1,30 @@
+{
+	"home":"Home",
+	"redux":"Redux",
+	"atom":"Atom",
+	"Atom_App_Page":"Atom App Page",
+	"Redux_App_Page":"Redux App Page",
+	"add":"Add",
+	"edit":"Edit",
+	"delete":"Delete",
+	"complete":"Complete",
+	"undo":"Undo",
+	"save":"Save",
+	"cancel":"Cancel",
+	"close":"Close",
+	"submit":"Submit",
+	"yes":"Yes",
+	"no":"No",
+	"ok":"Ok",
+	"confirm":"Confirm",
+	"error":"Error",
+	"warning":"Warning",
+	"Add a new todo...":"Add a new todo...",
+	"No todos yet. Add a new one above!":" No todos yet. Add a new one above!"
+
+
+	 
+
+
+
+}

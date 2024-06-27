@@ -1,8 +1,9 @@
 import { useRecoilState } from "recoil";
 import EmptyStateAtom from "./EmptyStateAtom";
 import { todosState } from "../../Atom/todoAtom";
+import { useTranslation } from "react-i18next";
 
- const ActionButton = ({
+const ActionButton = ({
   onClick,
   label,
   className,
@@ -22,6 +23,7 @@ import { todosState } from "../../Atom/todoAtom";
 
 const TodosListAtom = () => {
   const [todos, setTodos] = useRecoilState(todosState);
+  const { t } = useTranslation("global");
 
   const handleToggleComplete = (id: number) => {
     setTodos((oldTodos) =>
@@ -56,7 +58,7 @@ const TodosListAtom = () => {
               <div className="flex items-center space-x-2">
                 <ActionButton
                   onClick={() => handleToggleComplete(todo.id)}
-                  label={todo.completed ? "Undo" : "Complete"}
+                  label={todo.completed ? t("undo") : t("complete")}
                   className={
                     todo.completed
                       ? "bg-green-500 focus:ring-green-500"
@@ -65,7 +67,7 @@ const TodosListAtom = () => {
                 />
                 <ActionButton
                   onClick={() => handleDeleteTodo(todo.id)}
-                  label="Delete"
+                  label={t("delete")}
                   className="bg-red-500 focus:ring-red-500"
                 />
               </div>
