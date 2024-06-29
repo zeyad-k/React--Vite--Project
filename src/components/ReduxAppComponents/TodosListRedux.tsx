@@ -31,11 +31,11 @@ const TodosListRedux = () => {
     <div>
       {/* <h1>Todos List</h1> */}
       {todos.length > 0 ? (
-        <ul className="mt-4 space-y-2">
+        <ul className="mt-4 flex flex-col  gap-2 ">
           {todos.map((todo: Todo) => (
             <li
               key={todo.id}
-              className="flex items-center justify-between p-2 bg-gray-50 rounded-md"
+              className="flex items-center justify-between p-2 bg-gray-10 rounded-md"
             >
               <span
                 className={`flex-1 ${
@@ -46,12 +46,12 @@ const TodosListRedux = () => {
               >
                 {todo.text}
               </span>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center  gap-2">
                 <button
                   onClick={() => handleToggleComplete(todo.id)}
                   className="px-2 py-1 text-xs text-white bg-green-500 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                 >
-                  {todo.completed ? t("Undo") : t("Complete")}
+                  {todo.completed ? t("undo") : t("complete")}
                 </button>
                 <button
                   onClick={() => handleDeleteTodo(todo.id)}

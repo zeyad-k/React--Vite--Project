@@ -14,7 +14,7 @@ const Layout = () => {
       <ChangeLanguage />
       <nav className="bg-gray-800 flex gap-2 items-center text-white p-4">
         
-        <ul className="flex space-x-4 justify-center">
+        <ul className="flex  gap-3 justify-center">
           <li>
             <Link to="/" className="hover:text-gray-400">
               {t("home")}
