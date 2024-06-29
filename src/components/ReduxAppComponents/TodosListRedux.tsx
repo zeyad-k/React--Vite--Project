@@ -47,12 +47,14 @@ const TodosListRedux = () => {
                 {todo.text}
               </span>
               <div className="flex items-center  gap-2">
-                <button
-                  onClick={() => handleToggleComplete(todo.id)}
-                  className="px-2 py-1 text-xs text-white bg-green-500 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-                >
-                  {todo.completed ? t("undo") : t("complete")}
-                </button>
+               <button
+  onClick={() => handleToggleComplete(todo.id)}
+  className={`px-2 py-1 text-xs text-white rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-opacity-50 ${
+    todo.completed ? "bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-500" : "bg-green-500 focus:ring-green-500"
+  }`}
+>
+  {todo.completed ? t("undo") : t("complete")}
+</button>
                 <button
                   onClick={() => handleDeleteTodo(todo.id)}
                   className="px-2 py-1 text-xs text-white bg-red-500 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
