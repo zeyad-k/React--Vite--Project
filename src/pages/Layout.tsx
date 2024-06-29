@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Outlet } from "react-router-dom";
-import ChangeLanguage from "../components/LanguageComponents/ChangeLanguage";
-import Header from "../components/Header";
+ import Header from "../components/Header";
 
 const Layout = () => {
   // const [t] = useTranslation("global");
@@ -12,10 +11,10 @@ const Layout = () => {
 
   return (
     <div dir={direction}>
-      {/* <div className="flex "> */}
+      
       
       <Header />
-      {/* </div> */}
+      
 
       <Outlet />
     </div>

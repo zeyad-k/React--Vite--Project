@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     // <div>
-      <nav className="bg-gray-800 flex gap-2 items-center justify-between text-white  px-4 py-2">
+      <nav className="bg-gray-800 flex gap-2 items-center justify-between text-white  px-16 py-2">
         <ul className="flex  gap-3 justify-center">
           <li>
             <Link to="/" className="hover:text-gray-400">

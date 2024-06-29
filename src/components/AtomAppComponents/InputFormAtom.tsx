@@ -25,7 +25,7 @@ const InputFormRecoil = () => {
   };
 
   return (
-    <form className="flex items-center space-x-2" onSubmit={handleAddTodo}>
+    <form className="flex items-center gap-2" onSubmit={handleAddTodo}>
       <input
         type="text"
         className="flex-1 p-2 border-2 border-gray-200 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
