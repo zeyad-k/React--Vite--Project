@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface TodoInputFormProps {
   addTodo: (todo: string) => void;
@@ -6,6 +7,7 @@ interface TodoInputFormProps {
 
 const TodoInputForm: React.FC<TodoInputFormProps> = ({ addTodo }) => {
   const [input, setInput] = useState<string>("");
+  const { t } = useTranslation("global");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -30,7 +32,7 @@ const TodoInputForm: React.FC<TodoInputFormProps> = ({ addTodo }) => {
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         type="submit"
       >
-        Add
+        {t("Add")}
       </button>
     </form>
   );

@@ -15,7 +15,7 @@ type Todo = {
 };
 
 const TodosListRedux = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("global");
   const todos = useSelector((state: RootState) => state.todos);
   const dispatch = useDispatch();
 

@@ -20,7 +20,8 @@
 	"error":"Error",
 	"warning":"Warning",
 	"Add a new todo...":"Add a new todo...",
-	"No todos yet. Add a new one above!":" No todos yet. Add a new one above!"
+	"No todos yet. Add a new one above!":" No todos yet. Add a new one above!",
+	"Todo App using props drilling":"Todo App using props drilling"
 
 
 	 

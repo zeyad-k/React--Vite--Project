@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TodoList from "./TodoList";
 import TodoInputForm from "./TodoInputForm";
+import { useTranslation } from "react-i18next";
 
 interface Todo {
   text: string;
@@ -8,6 +9,7 @@ interface Todo {
 }
 
 const TodoApp = () => {
+  const { t } = useTranslation("global");
   const [todos, setTodos] = useState<Todo[]>(() => {
     const savedTodos = localStorage.getItem("todos");
     return savedTodos ? JSON.parse(savedTodos) : [];
@@ -43,7 +45,7 @@ const TodoApp = () => {
           toggleTodo={toggleTodo}
         />
       ) : (
-        <p className="text-center">No todos yet. Add some!</p>
+        <p className="text-center">{t("No todos yet. Add some!")}</p>
       )}
     </div>
   );

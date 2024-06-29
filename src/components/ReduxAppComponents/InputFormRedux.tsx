@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const InputFormRedux = () => {
   const [text, setText] = useState<string>("");
    const dispatch = useDispatch();
-   const { t } = useTranslation();
+   const { t } = useTranslation("global");
 
 
   const handleAddTodo = (e: FormEvent<HTMLFormElement>) => {
