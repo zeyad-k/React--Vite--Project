@@ -20,7 +20,7 @@ const TodoList: React.FC<TodoListProps> = ({
 
   return (
     <div className="w-full text-center">
-      <h1>Todo List</h1>
+      <h1>{t("Todo List")}</h1>
       <ul>
         {todos.map((todo, index) => (
           <li
