@@ -2,6 +2,9 @@ import { useDispatch } from "react-redux";
 import { useState, ChangeEvent, FormEvent } from "react";
 import { addTodo } from "../../ReduxToolkit/todoSlice";
 import { useTranslation } from "react-i18next";
+import { toast, ToastContainer } from 'react-toastify'; // Import toast and ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; // Import toastify CSS
+
  
 
 const InputFormRedux = () => {
@@ -10,19 +13,31 @@ const InputFormRedux = () => {
    const { t } = useTranslation("global");
 
 
-  const handleAddTodo = (e: FormEvent<HTMLFormElement>) => {
+   const handleAddTodo = (e: FormEvent) => {
     e.preventDefault();
-    if (text.trim()) {
+    if (!text.trim()) { // Check if the input is empty or only whitespace
+      toast.error(t("You can not add empty task.")); // Display error toast
+    } else {
       dispatch(addTodo(text));
       setText("");
+      toast.success(t("Task added successfully!")); // Display success toast
     }
   };
+
+  // const handleAddTodo = (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   if (text.trim()) {
+  //     dispatch(addTodo(text));
+  //     setText("");
+  //   }
+  // };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
 
   return (
+    <>
     <form className="flex items-center gap-2" onSubmit={handleAddTodo}>
       <input
         type="text"
@@ -38,6 +53,8 @@ const InputFormRedux = () => {
         {t('add')}
       </button>
     </form>
+     <ToastContainer />
+     </>
   );
 };
 

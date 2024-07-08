@@ -24,7 +24,10 @@
   "Todo App using props drilling":"تطبيق مهام يستخدم نقل البيانات",
   "English":"الانجليزية",
   "Arabic":"العربية",
-  "Todo List":"قائمة المهام"
+  "Todo List":"قائمة المهام",
+  "You can not add empty task.":"لا يمكنك اضافة مهمة فارغة.",
+  "Task added successfully!" : "تمت اضافة المهمة بنجاح!"
+
 
  
 

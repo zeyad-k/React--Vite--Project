@@ -24,7 +24,9 @@
 	"Todo App using props drilling":"Todo App using props drilling",
 	"English":"English",
 	"Arabic":"Arabic",
-	"Todo List":"Todo List"
+	"Todo List":"Todo List",
+	"You can not add empty task.":"You can not add empty task.",
+	"Task added successfully!":"Task added successfully!"
 
 
 
