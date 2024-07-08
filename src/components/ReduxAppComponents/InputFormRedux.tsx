@@ -12,7 +12,7 @@ const InputFormRedux = () => {
 
   const handleAddTodo = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (text) {
+    if (text.trim()) {
       dispatch(addTodo(text));
       setText("");
     }

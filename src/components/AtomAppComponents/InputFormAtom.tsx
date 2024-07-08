@@ -10,7 +10,7 @@ const InputFormRecoil = () => {
 
   const handleAddTodo = (e: FormEvent) => {
     e.preventDefault();
-    if (text) {
+    if (text.trim()) {
       setTodos((oldTodos) => [
         ...oldTodos,
         { id: Date.now(), text, completed: false },
